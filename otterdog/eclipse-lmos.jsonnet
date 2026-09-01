@@ -38,11 +38,11 @@ orgs.newOrg('technology.lmos', 'eclipse-lmos') {
     orgs.newOrgSecret('LMOS_BOT_TOKEN') {
       value: "pass:bots/technology.lmos/github.com/token-hd5700",
     },
-    orgs.newOrgSecret('OSSRH_PASSWORD') {
-      value: "pass:bots/technology.lmos/oss.sonatype.org/gh-token-password",
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_PASSWORD') {
+      value: "pass:bots/technology.lmos/central.sonatype.org/token-password",
     },
-    orgs.newOrgSecret('OSSRH_USERNAME') {
-      value: "pass:bots/technology.lmos/oss.sonatype.org/gh-token-username",
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_USERNAME') {
+      value: "pass:bots/technology.lmos/central.sonatype.org/token-username",
     },
     orgs.newOrgSecret('PROJECTS_STORAGE_PRIVATE_KEY') {
       value: "pass:bots/technology.lmos/projects-storage.eclipse.org/id_rsa",
@@ -62,6 +62,7 @@ orgs.newOrg('technology.lmos', 'eclipse-lmos') {
       has_wiki: false,
     },
     orgs.newRepo('arc') {
+      allow_auto_merge: true,
       description: "The Arc project utilizes the power of Kotlin DSL and Kotlin Scripting to define a language optimized for building LLM-powered solutions.",
       has_wiki: false,
       has_discussions: true,
@@ -70,6 +71,7 @@ orgs.newOrg('technology.lmos', 'eclipse-lmos') {
       ],
     },
     orgs.newRepo('arc-spring-init') {
+      allow_auto_merge: true,
       description: "A demo project for the Arc Agent Framework",
       has_wiki: false,
       rulesets: [
@@ -77,6 +79,7 @@ orgs.newOrg('technology.lmos', 'eclipse-lmos') {
       ],
     },
     orgs.newRepo('arc-view') {
+      allow_auto_merge: true,
       description: "Arc View is a UI application for Arc agents",
       has_wiki: false,
       rulesets: [
@@ -84,6 +87,7 @@ orgs.newOrg('technology.lmos', 'eclipse-lmos') {
       ],
     },
     orgs.newRepo('lmos-router') {
+      allow_auto_merge: true,
       description: "Efficient Agent Routing with SOTA Language and Embedding Models",
       has_wiki: false,
       rulesets: [
@@ -91,6 +95,7 @@ orgs.newOrg('technology.lmos', 'eclipse-lmos') {
       ],
     },
     orgs.newRepo('lmos-operator') {
+      allow_auto_merge: true,
       description: "The LMOS Operator is a Kubernetes operator designed to dynamically resolve Channel requirements based on the capabilities of installed Agents within a Kubernetes cluster.",
       has_wiki: false,
       rulesets: [
@@ -114,6 +119,7 @@ orgs.newOrg('technology.lmos', 'eclipse-lmos') {
       ],
     },
     orgs.newRepo('lmos-runtime') {
+      allow_auto_merge: true,
       description: "The LMOS Runtime facilitates dynamic agent routing and conversation handling in a multi-tenant, multi-channel environment.",
       has_wiki: false,
       has_discussions: true,      
@@ -150,6 +156,15 @@ orgs.newOrg('technology.lmos', 'eclipse-lmos') {
         value: "pass:bots/technology.lmos/lmos-cli/secret-key-windows",
         },
       ],
+    },
+    orgs.newRepo('adl') {
+      description: "The Agent Definition Language",
+      has_wiki: false,
+      allow_merge_commit: true,
+      rulesets: [
+        defaultBranchRuleset()
+      ],
+      has_discussions: true,
     },
     orgs.newRepo('website') {
       allow_merge_commit: true,
